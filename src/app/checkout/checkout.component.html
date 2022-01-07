@@ -1,0 +1,203 @@
+<ng-container *ngIf="products.length != 0">
+  <h1 class="mt-2">Your Orders</h1>
+  <div class="container mt-4" style="text-align: center">
+    <div class="card-table">
+      <div class="cart-product">
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+              <th>Sr.No</th>
+              <th>Manu Name</th>
+
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of products; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ item.menuname }}</td>
+
+              <th style="width: 12%">{{ item.menuprice }}</th>
+              <td style="width: 12%">{{ item.qty }}</td>
+              <td style="width: 12%">{{ item.total }}</td>
+            </tr>
+            <tr>
+              <td colspan="4"></td>
+
+              <td>
+                <strong>Grand Total : Rs.{{ grandTotal }}</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <br /><br />
+
+  <h1>Enter your details:</h1>
+  <div class="col-md-6 mx-auto">
+    <form #addressForm = "ngForm" (ngSubmit)="onSubmit(addressForm.value)">
+      <div class="form-row">
+        <div class="col">
+          <label for="fname">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="first name"
+            ngModel
+            #fname = "ngModel"
+            name="fname"
+            id="fname"
+            required
+          />
+          <p
+          class="small text-danger my-2"
+          *ngIf="fname.dirty && fname.invalid"
+        >
+          First name can't be empty !
+        </p>
+        </div>
+        <br />
+        <div class="col">
+          <label for="lname">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="last name"
+            id="lname"
+            name="lname"
+            #lname = "ngModel"
+            ngModel
+            required
+          />
+          <p
+                  class="small text-danger my-2"
+                  *ngIf="lname.dirty && lname.invalid"
+                >
+                  Last name can't be empty !
+                </p>
+        </div>
+      </div>
+      <br />
+      <div class="form-group">
+        <label for="inputmobile">Mobile no</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputmobile"
+          placeholder="enter mobile no"
+          ngModel
+          #inputmobile = "ngModel"
+          name="inputmobile"
+          required
+        />
+        <p
+        class="small text-danger my-2"
+        *ngIf="inputmobile.dirty && inputmobile.invalid"
+      >
+        Mobile can't be empty !
+      </p>
+      </div>
+      <br />
+      <div class="form-group">
+        <label for="inputAddress">Address</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputAddress"
+          placeholder="enter address"
+          ngModel
+          #inputAddress = "ngModel"
+          name="inputAddress"
+          required
+        />
+        <p
+        class="small text-danger my-2"
+        *ngIf="inputAddress.dirty && inputAddress.invalid"
+      >
+        Address can't be empty !
+      </p>
+      </div>
+      <br />
+
+      
+       
+        
+        <div class="form-row">
+          <label for="inputState">State</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="enter state"
+            id="inputState"
+            name="inputState"
+            ngModel
+            #inputState ="ngModel"
+            required
+          />
+          <p
+          class="small text-danger my-2"
+          *ngIf="inputState.dirty && inputState.invalid"
+        >
+          State can't be empty !
+        </p>
+        </div>
+        <br />
+        <div class="form-row">
+          <label for="inputZip">PIN</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputPin"
+            placeholder="enter pin code"
+            ngModel
+            name="inputPin"
+            #inputPin ="ngModel"
+            required
+          />
+          <p
+          class="small text-danger my-2"
+          *ngIf="inputPin.dirty && inputPin.invalid"
+        >
+          Pin can't be empty !
+        </p>
+        </div>
+        <br />
+        <div class="form-row">
+          <label for="method">Select payment method</label>
+          <select class="form-control" id="method">
+            <option selected>Choose...</option>
+            <option value="">Pay on delivery</option>
+          </select>
+        </div>
+      
+      <br /><br />
+
+      <button type="submit" [disabled]="addressForm.pristine || addressForm.invalid" class="btn btn-success" routerLink="/orders" >
+        Confirm Order
+      </button>
+    </form>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="products.length == 0">
+  <div class="container">
+    <div class="card">
+      <h2 class="card-title">Checkout</h2>
+    </div>
+    <div class="center">
+      <img
+        src="https://www.metro-markets.com/plugins/user/images/emptycart.png"
+        alt=""
+      />
+      <h2>Your cart is empty!</h2>
+      <h4>Add item to it now</h4>
+      <button routerLink="/test" class="btn btn-success">Order Now</button>
+    </div>
+  </div>
+</ng-container>
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />

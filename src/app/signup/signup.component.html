@@ -1,0 +1,183 @@
+<div class="container" style="padding-top: 60px">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card-group">
+        <div class="card p-4">
+          <div class="card-body">
+            <p class="display-4 text-success mt-2 text-center">Sign Up</p>
+            <hr />
+
+            <form (ngSubmit)="signUpSubmit(signUpForm)" #signUpForm="ngForm">
+              <!-- <div class="mb-2">
+                <label for="userid" class="form-label">User id</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="userid"
+                  name="userid"
+                  [(ngModel)]="user.userid"
+                  #userid="ngModel"
+                  placeholder="enter userid"
+                  required
+                />
+                <p
+                  class="small text-danger my-2"
+                  *ngIf="userid.dirty && userid.invalid"
+                >
+                  User id can't be empty !
+                </p>
+              </div> -->
+              <!-- <div class="mb-3">
+    <label for="username" class="form-label">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      name="name"
+      [(ngModel)]="user.name"
+      #name="ngModel"
+      placeholder="enter name"
+      required
+    />
+    <p class="small text-danger my-2" *ngIf="name.dirty && name.invalid">
+      Name can't be empty !
+    </p>
+  </div> -->
+              <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="username"
+                  name="username"
+                  [(ngModel)]="user.username"
+                  #username="ngModel"
+                  placeholder="enter username"
+                  required
+                />
+                <p
+                  class="small text-danger my-2"
+                  *ngIf="username.dirty && username.invalid"
+                >
+                  Username can't be empty !
+                </p>
+              </div>
+
+              <div class="mb-3">
+                <label for="useremail" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="useremail"
+                  name="useremail"
+                  [(ngModel)]="user.useremail"
+                  #useremail="ngModel"
+                  placeholder="enter email"
+                  required
+                />
+                <p
+                  class="small text-danger my-2"
+                  *ngIf="useremail.dirty && useremail.invalid"
+                >
+                  email can't be empty !
+                </p>
+              </div>
+
+              <div class="mb-3">
+                <label for="userpassword" class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="userpassword"
+                  name="userpassword"
+                  [(ngModel)]="user.userpassword"
+                  #userpassword="ngModel"
+                  placeholder="enter password"
+                  required
+                />
+                <p
+                  class="small text-danger my-2"
+                  *ngIf="userpassword.dirty && userpassword.invalid"
+                >
+                  Password can't be empty !
+                </p>
+              </div>
+              <div class="mb-3">
+                <label for="useraddress" class="form-label">Address</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="useraddress"
+                  name="useraddress"
+                  [(ngModel)]="user.useraddress"
+                  #useraddress="ngModel"
+                  placeholder="enter address"
+                  required
+                />
+                <p
+                  class="small text-danger my-2"
+                  *ngIf="useraddress.dirty && useraddress.invalid"
+                >
+                  Address can't be empty !
+                </p>
+              </div>
+              <div class="mb-3">
+                <label for="usermobile" class="form-label">Mobile</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="usermobile"
+                  name="mobile"
+                  [(ngModel)]="user.usermobile"
+                  #usermobile="ngModel"
+                  placeholder="enter mobile"
+                  required
+                />
+                <p
+                  class="small text-danger my-2"
+                  *ngIf="usermobile.dirty && usermobile.invalid"
+                >
+                  Mobile can't be empty !
+                </p>
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn-success"
+                [disabled]="signUpForm.pristine || signUpForm.invalid"
+              >
+                Submit
+              </button>
+            </form> <br>
+            <p>Already have an account? click <a routerLink="/signin">here</a> to Sign in</p>
+
+            <div
+              class="alert alert-success d-flex align-items-center mt-2"
+              role="alert"
+              *ngIf="successFlag"
+            >
+              <i class="material-icons">check_circle</i>
+              <div class="ms-2">
+                New user created successfully ! Click
+                <a routerLink="/signin">here</a> to login.
+              </div>
+            </div>
+
+            <div
+              class="alert alert-danger d-flex align-items-center mt-2"
+              role="alert"
+              *ngIf="errorFlag"
+            >
+              <i class="material-icons"> warning </i>
+              <div class="ms-2">
+                There was an unexpected error. We couldn't complete your
+                request.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br /><br><br>

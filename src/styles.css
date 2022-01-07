@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.selector {
+    background-image: url("https://images.creativemarket.com/0.1.0/ps/6463322/1131/750/m1/fpnw/wm0/screenshot_2-.png?1559133476&s=1ffcef3cadc30f3d3b37520b3c3b13d2");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.selector2 {
+    background-image: url("https://i.pinimg.com/736x/a7/b4/52/a7b452bec3df44c18b21003ae60aa4dc.jpg");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

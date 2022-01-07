@@ -1,0 +1,57 @@
+<ng-container *ngIf="products.length !=0">
+    <p id="order">Your order is succesfull.</p>
+    
+    <div class="container mt-5" style="text-align: center;">
+        <h1 style="text-align: left;">Order Details:</h1>
+        <div class="card-table">
+            <div class="cart-product">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Sr.No</th>
+                            <th>Manu Name</th>
+                            
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of products; let i = index">
+                            <td>{{i+1}}</td>
+                            <td>{{item.menuname}}</td>
+                            <th style="width: 12%;">{{item.menuprice}}</th>
+                            <td style="width: 12%;">{{item.qty}}</td>
+                            <td style="width: 12%;">{{item.total}}</td>
+                            
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                           
+                            <td><strong>Grand Total : Rs.{{grandTotal}}</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+
+
+
+<ng-container *ngIf="products.length ==0">
+    <div class="container">
+        <div class="card">
+            <h2 class="card-title">My Orders</h2>
+        </div>
+        <div class="center">
+            <img src="https://www.metro-markets.com/plugins/user/images/emptycart.png" alt="">
+            <h2>You have not ordered anything!</h2>
+            <button routerLink="/test" class="btn btn-success">Order Now</button>
+        </div>
+    </div>
+</ng-container>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+

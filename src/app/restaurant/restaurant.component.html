@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="form-group mt-5">
+        <input type="text" class="form-control" id="Search" placeholder="Search restaurant name" [(ngModel)]="findName">
+      </div>
+    </div>
+    <div class="col-md-8">
+    
+      <table class="table table-bordered border-primary mt-5" style="text-align: center;">
+        <thead class="table-dark" style="color: yellow;">
+          <tr>
+           <th>Restaurant Id</th>
+           <th>Restaurant Name</th>
+           <th>Restaurant Location</th>
+           <th>Order</th>
+          </tr>
+        </thead>
+        <tbody style="color: white;">
+          <tr *ngFor="let r of rest |restfilter: findName ">
+            <td>{{ r.restid }}</td>
+            <td style="font-weight: bold;">{{ r.restname }}</td>
+            <td>{{ r.restlocation }}</td>
+            <td> <button class="btn btn-success btn-link" style="color: white;" routerLink="/test">
+              Order from here
+            </button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br>

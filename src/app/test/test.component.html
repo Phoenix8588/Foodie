@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="form-group mt-5">
+      <input
+        type="text"
+        class="form-control"
+        id="search"
+        placeholder="Search food by menu name"
+        [(ngModel)]="nameSearch"
+      />
+    </div>
+  </div>
+  <div class="col-md-8">
+    <table
+      class="table table-bordered border-primary mt-5"
+      style="text-align: center"
+    >
+      <thead class="table-dark" style="color: yellow;">
+        <tr>
+          <th>Menu Id</th>
+          <th>Menu Name</th>
+          <th>Price (Rs.)</th>
+          
+          <th>Quantity</th>
+          <th>Order</th>
+        </tr>
+      </thead>
+      <tbody style="color: white;">
+        <tr *ngFor="let item of data | filter: nameSearch">
+          <td>{{ item.menuid }}</td>
+          <td style="font-weight: bold">{{ item.menuname }}</td>
+          <td>
+            {{ item.menuprice }}
+          </td>
+          
+          <td>
+            <input
+              type="number"
+              class="form-control"
+              name="quantity"
+              min="0"
+              [(ngModel)]="item.qty"
+            />
+          </td>
+          <td>
+            <button class="btn btn-success btn-link" style="color: white;" (click)=addtocart(item)>
+              Add to cart
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<br /><br /><br /><br /><br /><br />
